@@ -1,0 +1,1305 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NGULTIK | Ngulas Autentik</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+
+--pink:#fad2f7;
+--blue:#017aff;
+
+--blue:#017aff;
+--blue-light:#e5f3ff;
+
+--dark:#161616;
+--gray:#6b7280;
+--white:#ffffff;
+
+--gradient:
+linear-gradient(
+135deg,
+#ff2e88,
+#2196f3
+);
+
+--shadow:
+0 12px 30px rgba(0,0,0,.08);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#fff1f8 0%,
+#ffffff 45%,
+#eef7ff 100%
+);
+
+color:var(--dark);
+
+overflow-x:hidden;
+
+}
+
+.social{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.social a{
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+text-decoration:none;
+
+color:#f77cf1;
+
+font-size:24px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+.social a:hover{
+
+background:linear-gradient(
+135deg,
+#f77cf1,
+#017aff
+);
+
+color:white;
+
+transform:translateY(-5px);
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:white;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#f77cf1,
+#017aff
+);
+
+border-radius:50px;
+
+}
+
+/* HEADER */
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+background:
+rgba(255,255,255,.92);
+
+backdrop-filter:
+blur(20px);
+
+border-bottom:
+1px solid #f0f0f0;
+
+}
+
+.navbar{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+}
+
+
+/* NAVBAR LOGO WRAPPER */
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOGO IMAGE */
+.logo-img{
+  width:90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+/* JUDUL */
+.logo h1{
+  font-size: 30px;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* SUBTITLE */
+.logo p{
+  font-size: 12px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.nav-links{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:var(--dark);
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--pink);
+
+}
+
+/* BREAKING NEWS */
+
+.breaking{
+
+background:var(--gradient);
+
+color:white;
+
+overflow:hidden;
+
+padding:12px 0;
+
+}
+
+.breaking-text{
+
+white-space:nowrap;
+
+animation:marquee 18s linear infinite;
+
+font-weight:500;
+
+}
+
+@keyframes marquee{
+
+from{
+transform:translateX(100%);
+}
+
+to{
+transform:translateX(-100%);
+}
+
+}
+
+/* HERO */
+
+.hero{
+  width:90%;
+  max-width:1300px;
+  margin:30px auto;
+}
+
+/* CONTAINER SLIDER */
+.hero-slider{
+  position: relative;
+  height: 500px; /* FIX HEIGHT BIAR GA MELELEH */
+  overflow: hidden;
+  border-radius: 35px;
+  box-shadow: var(--shadow);
+}
+
+/* SLIDE */
+.hero-slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* ACTIVE SLIDE */
+.hero-slide.active{
+  opacity: 1;
+  z-index: 2;
+}
+
+/* GAMBAR */
+.hero-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2));
+  z-index: 3;
+}
+
+.hero-slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.hero-slide.active{
+  opacity: 1;
+  z-index: 2;
+}
+
+/* TEKS */
+.hero-content{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  max-width: 700px;
+  z-index: 4;
+}
+
+.hero-tag{
+  display:inline-block;
+  padding:10px 18px;
+  background:white;
+  color:var(--pink);
+  border-radius:50px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.hero-content h2{
+  font-size:40px;
+}
+
+.hero-content p{
+  font-size:15px;
+  line-height:1.6;
+}
+/* CONTAINER */
+
+.container{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+/* SEARCH */
+
+.search-box{
+
+background:white;
+
+padding:18px 22px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:15px;
+
+}
+
+.search-box i{
+
+font-size:20px;
+
+color:var(--blue);
+
+}
+
+.search-box input{
+
+border:none;
+
+outline:none;
+
+width:100%;
+
+font-size:16px;
+
+background:none;
+
+}
+
+#resultText{
+
+margin-bottom:25px;
+
+font-weight:600;
+
+color:#666;
+
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+font-size:32px;
+
+font-weight:700;
+
+margin:50px 0 20px;
+
+}
+
+/* TRENDING TAG */
+
+.trending-tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:30px;
+
+}
+
+.trending-tags span{
+
+background:white;
+
+padding:10px 18px;
+
+border-radius:50px;
+
+box-shadow:var(--shadow);
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.trending-tags span:hover{
+
+background:var(--gradient);
+
+color:white;
+
+transform:translateY(-3px);
+
+}
+
+/* FILTER BUTTON */
+
+.filter-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:30px;
+
+}
+
+.filter-buttons button{
+
+border:none;
+
+background:white;
+
+padding:12px 20px;
+
+border-radius:50px;
+
+font-weight:600;
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+
+transition:.3s;
+
+}
+
+.filter-buttons button:hover{
+
+background:var(--gradient);
+
+color:white;
+
+}
+
+/* NEWS GRID */
+
+.news-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(320px,1fr)
+);
+
+gap:25px;
+
+margin-bottom:60px;
+
+}
+
+.news-card{
+
+background:white;
+
+border-radius:25px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+color:inherit;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.news-card:hover{
+
+transform:
+translateY(-10px);
+
+}
+
+.news-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+.news-content{
+
+padding:20px;
+
+}
+
+.category{
+
+display:inline-block;
+
+padding:7px 12px;
+
+border-radius:30px;
+
+background:var(--blue);
+
+color:var(--pink);
+
+font-size:12px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.news-content h3{
+
+margin-bottom:10px;
+
+font-size:20px;
+
+}
+
+.news-content p{
+
+color:var(--gray);
+
+line-height:1.7;
+
+font-size:14px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:5px;
+
+background:var(--gradient);
+
+color:white;
+
+text-align:center;
+
+padding:5px 2px;
+
+}
+
+footer h2{
+
+font-size:40px;
+
+margin-bottom:5px;
+
+}
+
+footer p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.8;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.hero-card img{
+height:450px;
+}
+
+.hero-content{
+
+left:25px;
+right:25px;
+
+}
+
+.hero-content h2{
+font-size:30px;
+}
+
+.section-title{
+font-size:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+<div class="logo">
+   <img src="logongultik.png" class="logo-img" alt="logo ngultik">
+</div>
+
+<div>
+
+<h1>NGULTIK</h1>
+
+<p>
+Ngulas Autentik • Media Digital 
+</p>
+
+</div>
+
+</div>
+
+<nav class="nav-links">
+
+<a href="#">Beranda</a>
+
+<a href="#">Nasional</a>
+
+<a href="#">Politik</a>
+
+<a href="#">Bisnis</a>
+
+<a href="#">Teknologi</a>
+
+<a href="#">Lifestyle</a>
+
+<a href="#">Tentang</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- BREAKING NEWS -->
+
+<div class="breaking">
+
+<div class="breaking-text">
+
+🔥 BREAKING NEWS • Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial • Startup Indonesia Semakin Berkembang • Tren Bisnis Digital Meningkat • Destinasi Wisata Lokal Viral di Media Sosial • Generasi Z Jadi Penggerak Ekonomi Kreatif •
+
+</div>
+
+</div>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-slider">
+
+    <div class="hero-slide active">
+      <img
+class="hero-image"
+src="knpi.jpeg"
+alt="AI">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-tag">🔥 BERITA UTAMA</div>
+        <h2>Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial</h2>
+        <p>KNPI Cipondoh menggelar nobar film Pesta Babi dan diskusi publik untuk membahas isu pembangunan serta meningkatkan kesadaran kritis pemuda.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-tag">🔥 TEKNOLOGI</div>
+        <h2>AI Masuk Dunia Pendidikan</h2>
+        <p>Startup Indonesia mulai mengembangkan AI untuk belajar.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-tag">🔥 BISNIS</div>
+        <h2>Bisnis Digital Anak Muda</h2>
+        <p>Peluang usaha online semakin berkembang.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTAINER -->
+
+<div class="container">
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<i class="fas fa-search"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Cari berita, topik, atau keyword...">
+
+</div>
+
+<div id="resultText">
+
+Menampilkan semua berita
+
+</div>
+
+<!-- TRENDING -->
+
+<h2 class="section-title">
+
+🔥 Lagi Booming
+
+</h2>
+
+<div class="trending-tags">
+
+<span onclick="filterTag('ai')">
+#AI
+</span>
+
+<span onclick="filterTag('startup')">
+#Startup
+</span>
+
+<span onclick="filterTag('bisnis')">
+#Bisnis
+</span>
+
+<span onclick="filterTag('travel')">
+#Travel
+</span>
+
+<span onclick="filterTag('gen z')">
+#GenZ
+</span>
+
+<span onclick="filterTag('lifestyle')">
+#Lifestyle
+</span>
+
+<span onclick="filterTag('viral')">
+#Viral
+</span>
+
+<span onclick="filterTag('teknologi')">
+#Teknologi
+</span>
+
+<span onclick="filterTag('teknologi')">
+#Politik
+</span>
+
+</div>
+
+<!-- FILTER -->
+
+<div class="filter-buttons">
+
+<button onclick="filterCategory('all')">
+
+Semua
+
+</button>
+
+<button onclick="filterCategory('teknologi')">
+
+Teknologi
+
+</button>
+
+<button onclick="filterCategory('bisnis')">
+
+Bisnis
+
+</button>
+
+<button onclick="filterCategory('travel')">
+
+Travel
+
+</button>
+
+<button onclick="filterCategory('lifestyle')">
+
+Lifestyle
+
+</button>
+
+<button onclick="filterCategory('nasional')">
+
+Nasional
+
+</button>
+
+</div>
+
+<h2 class="section-title">
+
+📰 Berita Terbaru
+
+</h2>
+
+<div class="news-grid">
+
+    <a
+href="berita1.html"
+class="news-card searchable"
+data-category="politik">
+
+<img
+class="hero-image"
+src="knpi.jpeg"
+alt="AI">
+
+<div class="news-content">
+
+<div class="category">
+POLITIK
+</div>
+
+<h3>
+Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial
+</h3>
+
+<p>
+KNPI Cipondoh menggelar nobar film Pesta Babi dan diskusi publik untuk membahas isu pembangunan serta meningkatkan kesadaran kritis pemuda.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita2.html"
+class="news-card searchable"
+data-category="bisnis">
+
+<img
+src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200"
+alt="Bisnis">
+
+<div class="news-content">
+
+<div class="category">
+BISNIS
+</div>
+
+<h3>
+Bisnis Digital Semakin Diminati Generasi Muda
+</h3>
+
+<p>
+Peluang usaha berbasis internet semakin berkembang pesat.
+</p>
+
+</div>
+
+</a>
+
+<a
+href="berita3.html"
+class="news-card searchable"
+data-category="travel">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200"
+alt="Travel">
+
+<div class="news-content">
+
+<div class="category">
+TRAVEL
+</div>
+
+<h3>
+5 Destinasi Wisata Viral yang Wajib Dikunjungi
+</h3>
+
+<p>
+Tempat healing favorit yang sedang ramai di media sosial.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita4.html"
+class="news-card searchable"
+data-category="lifestyle">
+
+<img
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200"
+alt="Lifestyle">
+
+<div class="news-content">
+
+<div class="category">
+LIFESTYLE
+</div>
+
+<h3>
+Tren Hidup Sehat Jadi Gaya Hidup Baru Anak Muda
+</h3>
+
+<p>
+Olahraga dan pola makan sehat semakin populer di kalangan Gen Z.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita5.html"
+class="news-card searchable"
+data-category="nasional">
+
+<img
+src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200"
+alt="Nasional">
+
+<div class="news-content">
+
+<div class="category">
+NASIONAL
+</div>
+
+<h3>
+Pembangunan Infrastruktur Jadi Sorotan Publik
+</h3>
+
+<p>
+Berbagai proyek strategis nasional terus mendapat perhatian masyarakat.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita6.html"
+class="news-card searchable"
+data-category="teknologi">
+
+<img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200"
+alt="Teknologi">
+
+<div class="news-content">
+
+<div class="category">
+TEKNOLOGI
+</div>
+
+<h3>
+Media Sosial Menjadi Sumber Informasi Utama Gen Z
+</h3>
+
+<p>
+Perubahan pola konsumsi berita terjadi sangat cepat dalam beberapa tahun terakhir.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita7.html"
+class="news-card searchable"
+data-category="bisnis">
+
+<img
+src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200"
+alt="UMKM">
+
+<div class="news-content">
+
+<div class="category">
+BISNIS
+</div>
+
+<h3>
+UMKM Digital Tumbuh Pesat Berkat Platform Online
+</h3>
+
+<p>
+Transformasi digital membuka peluang baru bagi pelaku usaha kecil.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita8.html"
+class="news-card searchable"
+data-category="travel">
+
+<img
+src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
+alt="Travel">
+
+<div class="news-content">
+
+<div class="category">
+TRAVEL
+</div>
+
+<h3>
+Wisata Alam Kembali Menjadi Favorit Saat Liburan
+</h3>
+
+<p>
+Pengunjung memilih suasana alam untuk melepas penat dari aktivitas harian.
+</p>
+
+</div>
+
+</a>
+
+
+<a
+href="berita9.html"
+class="news-card searchable"
+data-category="lifestyle">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200"
+alt="Lifestyle">
+
+<div class="news-content">
+
+<div class="category">
+LIFESTYLE
+</div>
+
+<h3>
+Generasi Z Dorong Tren Produktivitas dan Self Growth
+</h3>
+
+<p>
+Pengembangan diri menjadi salah satu fokus utama anak muda saat ini.
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+<footer>
+
+<h2>
+NGULTIK
+</h2>
+
+<p>Berita Autentik untuk generasi</p>
+
+<div class="social">
+
+<a href="https://instagram.com/ngultikcom" target="_blank" title="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="mailto:ngultik@gmail.com" title="Email">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+<br>
+
+<p>
+© 2026 NGULTIK.
+All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const resultText = document.getElementById("resultText");
+
+searchInput.addEventListener("keyup", searchNews);
+
+function searchNews(){
+
+  const keyword = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".searchable");
+  let total = 0;
+
+  cards.forEach(card=>{
+
+    const title = card.querySelector("h3").innerText.toLowerCase();
+
+    if(title.includes(keyword)){
+      card.style.display="block";
+      total++;
+    } else {
+      card.style.display="none";
+    }
+
+  });
+
+  if(keyword===""){
+    resultText.innerHTML = `Menampilkan ${total} berita`;
+  } else {
+    resultText.innerHTML = `Menampilkan ${total} berita untuk "${keyword}"`;
+  }
+
+}
+
+function filterCategory(category){
+
+  const cards = document.querySelectorAll(".searchable");
+  let total = 0;
+
+  cards.forEach(card=>{
+
+    if(category==="all" || card.dataset.category===category){
+      card.style.display="block";
+      total++;
+    } else {
+      card.style.display="none";
+    }
+
+  });
+
+  resultText.innerHTML = `Menampilkan ${total} berita`;
+
+}
+
+function filterTag(keyword){
+
+  searchInput.value = keyword;
+
+  const cards = document.querySelectorAll(".searchable");
+  let total = 0;
+
+  cards.forEach(card=>{
+
+    const title = card.querySelector("h3").innerText.toLowerCase();
+
+    if(title.includes(keyword.toLowerCase())){
+      card.style.display="block";
+      total++;
+    } else {
+      card.style.display="none";
+    }
+
+  });
+
+  resultText.innerHTML = `Menampilkan ${total} berita untuk "${keyword}"`;
+
+}
+
+window.onload = ()=>{
+
+  const cards = document.querySelectorAll(".searchable");
+  resultText.innerHTML = `Menampilkan ${cards.length} berita`;
+
+};
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const slides = document.querySelectorAll(".hero-slide");
+  let current = 0;
+
+  function showSlide(index){
+    slides.forEach((slide, i)=>{
+      slide.classList.remove("active");
+      if(i === index){
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  function nextSlide(){
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  if(slides.length > 0){
+    showSlide(current);
+    setInterval(nextSlide, 3000);
+  }
+
+});
+
+</script>
