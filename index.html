@@ -1,7 +1,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="NGtrdpgLiofJKzRClutZ0HK-f9zkL07aBiPc0XCke58" />
 
 <title>NGULTIK | Ngulas Autentik</title>
 
@@ -213,14 +212,6 @@ padding:18px 0;
   margin: 0;
 }
 
-.nav-links{
-
-display:flex;
-
-gap:15px;
-
-}
-
 .nav-links a{
 
 text-decoration:none;
@@ -229,13 +220,35 @@ color:var(--dark);
 
 font-weight:500;
 
+padding:8px 14px;
+
+border-radius:50px;
+
 transition:.3s;
 
 }
 
 .nav-links a:hover{
 
-color:var(--pink);
+background:var(--blue-light);
+
+color:var(--blue);
+
+}
+
+.nav-links a.active{
+
+background:var(--gradient);
+
+color:white;
+
+}
+
+.nav-links{
+
+display:flex;
+align-items:center;
+gap:8px;
 
 }
 
@@ -622,6 +635,275 @@ font-size:14px;
 
 }
 
+.category-list{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:30px;
+
+}
+
+.category-list a{
+
+display:block;
+
+padding:14px 0;
+
+text-decoration:none;
+
+color:var(--dark);
+
+font-weight:500;
+
+border-bottom:1px solid #eee;
+
+transition:.3s;
+
+}
+
+.category-list a:hover{
+
+color:var(--blue);
+
+padding-left:10px;
+
+}
+
+.lihat-semua{
+
+border-bottom:none !important;
+
+font-weight:700 !important;
+
+color:var(--blue) !important;
+
+}
+
+.news-meta{
+
+font-size:12px;
+
+color:#888;
+
+margin-bottom:10px;
+
+display:flex;
+
+align-items:center;
+
+gap:5px;
+
+flex-wrap:wrap;
+
+}
+
+.news-meta i{
+
+color:var(--blue);
+
+}
+
+.category-mini{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:35px;
+
+}
+
+.mini-news{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:12px 0;
+
+text-decoration:none;
+
+color:var(--dark);
+
+border-bottom:1px solid #eee;
+
+transition:.3s;
+
+}
+
+.mini-news:last-child{
+
+border-bottom:none;
+
+}
+
+.mini-news:hover{
+
+padding-left:10px;
+
+}
+
+.mini-news img{
+
+width:100px;
+
+height:70px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+flex-shrink:0;
+
+}
+
+.mini-news h4{
+
+font-size:15px;
+
+line-height:1.5;
+
+font-weight:600;
+
+}
+
+.lihat-semua{
+
+display:block;
+
+margin-top:15px;
+
+text-align:right;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:var(--blue);
+
+}
+
+/* KATEGORI HOME */
+
+.category-wrapper{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+margin-bottom:50px;
+
+}
+
+.category-box{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+}
+
+.category-box h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+}
+
+.mini-news{
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+text-decoration:none;
+
+color:var(--dark);
+
+padding:12px 0;
+
+border-bottom:1px solid #eee;
+
+transition:.3s;
+
+}
+
+.mini-news:hover{
+
+transform:translateX(5px);
+
+}
+
+.mini-news img{
+
+width:90px;
+
+height:70px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+flex-shrink:0;
+
+}
+
+.mini-news h4{
+
+font-size:14px;
+
+line-height:1.5;
+
+}
+
+.lihat-semua{
+
+display:block;
+
+text-align:right;
+
+margin-top:15px;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:var(--blue);
+
+}
+
+@media(max-width:768px){
+
+.category-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
 /* FOOTER */
 
 footer{
@@ -685,6 +967,7 @@ font-size:25px;
 
 }
 
+
 </style>
 </head>
 
@@ -714,19 +997,14 @@ Ngulas Autentik • Media Digital
 
 <nav class="nav-links">
 
-<a href="#">Beranda</a>
-
-<a href="#">Nasional</a>
-
-<a href="#">Politik</a>
-
-<a href="#">Bisnis</a>
-
-<a href="#">Teknologi</a>
-
-<a href="#">Lifestyle</a>
-
-<a href="#">Tentang</a>
+<a href="index.html" class="active">Beranda</a>
+<a href="nasional.html">Nasional</a>
+<a href="politik.html">Politik</a>
+<a href="bisnis.html">Bisnis</a>
+<a href="teknologi.html">Teknologi</a>
+<a href="lifestyle.html">Lifestyle</a>
+<a href="organisasi.html">Organisasi</a>
+<a href="tentang.html"> Tentang</a>
 
 </nav>
 
@@ -740,7 +1018,7 @@ Ngulas Autentik • Media Digital
 
 <div class="breaking-text">
 
-🔥 BREAKING NEWS • Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial • Startup Indonesia Semakin Berkembang • Tren Bisnis Digital Meningkat • Destinasi Wisata Lokal Viral di Media Sosial • Generasi Z Jadi Penggerak Ekonomi Kreatif •
+🔥 BREAKING NEWS • Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial • MWC NU Kecamatan Cipondoh menyelenggarakan Lomba Pembacaan Rawi • Tren Bisnis Digital Meningkat • Destinasi Wisata Lokal Viral di Media Sosial • Generasi Z Jadi Penggerak Ekonomi Kreatif •
 
 </div>
 
@@ -765,12 +1043,15 @@ alt="AI">
     </div>
 
     <div class="hero-slide active">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600">
+      <img 
+      src="mwcnu.jpeg"
+      alt="AI">
+
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="hero-tag">🔥 TEKNOLOGI</div>
-        <h2>AI Masuk Dunia Pendidikan</h2>
-        <p>Startup Indonesia mulai mengembangkan AI untuk belajar.</p>
+        <div class="hero-tag">🔥 BERITA terbaru</div>
+        <h2>Sambut Tahun Baru Islam 1448 H, Lomba Rawi Pererat Silaturahmi Nahdliyin Cipondoh</h2>
+        <p>MWC NU Kecamatan Cipondoh menyelenggarakan Lomba Pembacaan Rawi yang diikuti oleh pengurus ranting, lembaga, badan otonom (Banom), serta keluarga besar Nahdlatul Ulama (KBNU) se-Kecamatan Cipondoh.</p>
       </div>
     </div>
 
@@ -925,6 +1206,12 @@ alt="AI">
 POLITIK
 </div>
 
+<div class="news-meta">
+<i class="fas fa-user"></i> Tim Redaksi NGULTIK
+&nbsp;&nbsp;•&nbsp;&nbsp;
+<i class="fas fa-calendar"></i> 16 Juni 2026
+</div>
+
 <h3>
 Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial
 </h3>
@@ -941,24 +1228,31 @@ KNPI Cipondoh menggelar nobar film Pesta Babi dan diskusi publik untuk membahas 
 <a
 href="berita2.html"
 class="news-card searchable"
-data-category="bisnis">
+data-category="organisasi">
 
 <img
-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200"
-alt="Bisnis">
+class="hero-image"
+src="mwcnu.jpeg"
+alt="AI">
 
 <div class="news-content">
 
 <div class="category">
-BISNIS
+ORGAANISASI & KEPEMUDAAN
+</div>
+
+<div class="news-meta">
+<i class="fas fa-user"></i> Tim Redaksi NGULTIK
+&nbsp;&nbsp;•&nbsp;&nbsp;
+<i class="fas fa-calendar"></i> 17 Juni 2026
 </div>
 
 <h3>
-Bisnis Digital Semakin Diminati Generasi Muda
+Sambut Tahun Baru Islam 1448 H, Lomba Rawi Pererat Silaturahmi Nahdliyin Cipondoh
 </h3>
 
 <p>
-Peluang usaha berbasis internet semakin berkembang pesat.
+MWC NU Kecamatan Cipondoh menyelenggarakan Lomba Pembacaan Rawi yang diikuti oleh pengurus ranting, lembaga, Banom, serta KBNU se-Kecamatan Cipondoh.
 </p>
 
 </div>
@@ -976,176 +1270,15 @@ alt="Travel">
 
 <div class="news-content">
 
-<div class="category">
-TRAVEL
-</div>
-
-<h3>
-5 Destinasi Wisata Viral yang Wajib Dikunjungi
-</h3>
-
-<p>
-Tempat healing favorit yang sedang ramai di media sosial.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita4.html"
-class="news-card searchable"
-data-category="lifestyle">
-
-<img
-src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200"
-alt="Lifestyle">
-
-<div class="news-content">
 
 <div class="category">
 LIFESTYLE
 </div>
 
-<h3>
-Tren Hidup Sehat Jadi Gaya Hidup Baru Anak Muda
-</h3>
-
-<p>
-Olahraga dan pola makan sehat semakin populer di kalangan Gen Z.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita5.html"
-class="news-card searchable"
-data-category="nasional">
-
-<img
-src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200"
-alt="Nasional">
-
-<div class="news-content">
-
-<div class="category">
-NASIONAL
-</div>
-
-<h3>
-Pembangunan Infrastruktur Jadi Sorotan Publik
-</h3>
-
-<p>
-Berbagai proyek strategis nasional terus mendapat perhatian masyarakat.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita6.html"
-class="news-card searchable"
-data-category="teknologi">
-
-<img
-src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200"
-alt="Teknologi">
-
-<div class="news-content">
-
-<div class="category">
-TEKNOLOGI
-</div>
-
-<h3>
-Media Sosial Menjadi Sumber Informasi Utama Gen Z
-</h3>
-
-<p>
-Perubahan pola konsumsi berita terjadi sangat cepat dalam beberapa tahun terakhir.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita7.html"
-class="news-card searchable"
-data-category="bisnis">
-
-<img
-src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200"
-alt="UMKM">
-
-<div class="news-content">
-
-<div class="category">
-BISNIS
-</div>
-
-<h3>
-UMKM Digital Tumbuh Pesat Berkat Platform Online
-</h3>
-
-<p>
-Transformasi digital membuka peluang baru bagi pelaku usaha kecil.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita8.html"
-class="news-card searchable"
-data-category="travel">
-
-<img
-src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200"
-alt="Travel">
-
-<div class="news-content">
-
-<div class="category">
-TRAVEL
-</div>
-
-<h3>
-Wisata Alam Kembali Menjadi Favorit Saat Liburan
-</h3>
-
-<p>
-Pengunjung memilih suasana alam untuk melepas penat dari aktivitas harian.
-</p>
-
-</div>
-
-</a>
-
-
-<a
-href="berita9.html"
-class="news-card searchable"
-data-category="lifestyle">
-
-<img
-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200"
-alt="Lifestyle">
-
-<div class="news-content">
-
-<div class="category">
-LIFESTYLE
+<div class="news-meta">
+<i class="fas fa-user"></i> Tim Redaksi NGULTIK
+&nbsp;&nbsp;•&nbsp;&nbsp;
+<i class="fas fa-calendar"></i> 17 Juni 2026
 </div>
 
 <h3>
@@ -1162,6 +1295,176 @@ Pengembangan diri menjadi salah satu fokus utama anak muda saat ini.
 
 </div>
 
+<h2 class="section-title">
+📂 Kategori Berita
+</h2>
+
+<div class="category-wrapper">
+
+<!-- ORGANISASI -->
+
+<div class="category-box">
+
+<h3>🤝 Organisasi & Kepemudaan</h3>
+
+<a href="berita2.html" class="mini-news">
+<img src="mwcnu.jpeg">
+<h4>Sambut Tahun Baru Islam 1448 H, Lomba Rawi Pererat Silaturahmi Nahdliyin Cipondoh</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200">
+<h4>Pemuda Jadi Motor Penggerak Perubahan di Era Digital</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200">
+<h4>Kolaborasi Organisasi Pemuda Makin Berkembang</h4>
+</a>
+
+<a href="organisasi.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+
+<!-- POLITIK -->
+
+<div class="category-box">
+
+<h3>🏛 Politik</h3>
+
+<a href="berita1.html" class="mini-news">
+<img src="knpi.jpeg">
+<h4>Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200">
+<h4>Partisipasi Politik Digital Semakin Meningkat</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200">
+<h4>Kebijakan Publik Jadi Sorotan Generasi Muda</h4>
+</a>
+
+<a href="politik.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+
+<!-- NASIONAL -->
+
+<div class="category-box">
+
+<h3>📰 Nasional</h3>
+
+<a href="berita5.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200">
+<h4>Pembangunan Infrastruktur Jadi Sorotan Publik</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=1200">
+<h4>Pemerataan Pendidikan Masih Menjadi Tantangan</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200">
+<h4>Transformasi Digital Dorong Pelayanan Publik</h4>
+</a>
+
+<a href="nasional.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+
+<!-- BISNIS -->
+
+<div class="category-box">
+
+<h3>💼 Bisnis</h3>
+
+<a href="berita2.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200">
+<h4>Bisnis Digital Semakin Diminati Generasi Muda</h4>
+</a>
+
+<a href="berita7.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200">
+<h4>UMKM Digital Tumbuh Pesat Berkat Platform Online</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200">
+<h4>Startup Lokal Mulai Menarik Investor</h4>
+</a>
+
+<a href="bisnis.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+
+<!-- TEKNOLOGI -->
+
+<div class="category-box">
+
+<h3>💻 Teknologi</h3>
+
+<a href="berita6.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200">
+<h4>Media Sosial Menjadi Sumber Informasi Utama Gen Z</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200">
+<h4>AI Mulai Masuk Dunia Pendidikan Indonesia</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200">
+<h4>Keamanan Data Jadi Tantangan Baru</h4>
+</a>
+
+<a href="teknologi.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+
+<!-- LIFESTYLE -->
+
+<div class="category-box">
+
+<h3>✨ Lifestyle</h3>
+
+<a href="berita4.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200">
+<h4>Tren Hidup Sehat Jadi Gaya Hidup Baru Anak Muda</h4>
+</a>
+
+<a href="berita9.html" class="mini-news">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200">
+<h4>Generasi Z Dorong Tren Self Growth</h4>
+</a>
+
+<a href="#" class="mini-news">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200">
+<h4>Work-Life Balance Jadi Prioritas Generasi Muda</h4>
+</a>
+
+<a href="lifestyle.html" class="lihat-semua">
+Lihat Semua →
+</a>
+
+</div>
+</div>
+
+
 <footer>
 
 <h2>
@@ -1174,6 +1477,14 @@ NGULTIK
 
 <a href="https://instagram.com/ngultikcom" target="_blank" title="Instagram">
 <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://tiktok.com/@ngultikcom" target="_blank" title="Tiktok">
+<i class="fab fa-tiktok"></i>
+</a>
+
+<a href="https://youtube.com/@ngultik" target="_blank" title="YouTube">
+<i class="fab fa-youtube"></i>
 </a>
 
 <a href="mailto:ngultik@gmail.com" title="Email">
