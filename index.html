@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="NGtrdpgLiofJKzRClutZ0HK-f9zkL07aBiPc0XCke58" />
-  
+
 <title>NGULTIK | Ngulas Autentik</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -250,6 +250,58 @@ color:white;
 display:flex;
 align-items:center;
 gap:8px;
+
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:var(--blue);
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.navbar{
+    position:relative;
+}
+
+.nav-links{
+
+    position:absolute;
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    flex-direction:column;
+    align-items:center;
+
+    padding:20px 0;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:none;
+
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+.nav-links a{
+    width:100%;
+    text-align:center;
+    padding:15px;
+}
 
 }
 
@@ -968,11 +1020,218 @@ font-size:25px;
 
 }
 
+/* ===========================
+   SPLASH SCREEN
+=========================== */
+
+#splashScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:
+linear-gradient(
+180deg,
+#fff4fb,
+#ffffff,
+#eef6ff
+);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+}
+
+.splash-box{
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+max-width:500px;
+width:90%;
+
+animation:fadeUp .8s;
+
+}
+
+.splash-logo{
+
+width:120px;
+
+margin-bottom:20px;
+
+}
+
+.splash-box h1{
+
+font-size:42px;
+
+background:linear-gradient(135deg,#ff2e88,#2196f3);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:10px;
+
+}
+
+.splash-box p{
+
+color:#666;
+
+margin-bottom:25px;
+
+}
+
+.splash-box h3{
+
+margin-bottom:25px;
+
+}
+
+.splash-buttons{
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.splash-buttons button{
+
+border:none;
+
+padding:15px 28px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#ff2e88,#2196f3);
+
+color:white;
+
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.splash-buttons button:hover{
+
+transform:translateY(-3px);
+
+}
+
+.splash-buttons a{
+
+text-decoration:none;
+
+}
+
+#skipSplash{
+
+display:block;
+
+margin-top:25px;
+
+cursor:pointer;
+
+color:#888;
+
+font-size:14px;
+
+}
+
+#skipSplash:hover{
+
+color:#017aff;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
 
 </style>
 </head>
 
 <body>
+
+  <!-- ===== SPLASH SCREEN NGULTIK ===== -->
+
+<div id="splashScreen">
+
+    <div class="splash-box">
+
+        <img src="logongultik.png" class="splash-logo">
+
+        <h1>NGULTIK</h1>
+
+        <p>Media Digital untuk Generasi Muda</p>
+
+        <h3>Pilih pengalamanmu</h3>
+
+        <div class="splash-buttons">
+
+            <button id="btnNews">
+                📰 Masuk ke NEWS
+            </button>
+
+            <a href="https://ngultik.github.io/SUARA/" target="_blank">
+                <button>
+                    🎙️ Masuk ke SUARA
+                </button>
+            </a>
+
+        </div>
+
+        <span id="skipSplash">
+            Lewati →
+        </span>
+
+    </div>
+
+</div>
 
 <header>
 
@@ -993,10 +1252,11 @@ Ngulas Autentik • Media Digital
 </p>
 
 </div>
-
+<div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
 </div>
 
-<nav class="nav-links">
+<nav class="nav-links" id="navMenu">
 
 <a href="index.html" class="active">Beranda</a>
 <a href="nasional.html">Nasional</a>
@@ -1004,7 +1264,7 @@ Ngulas Autentik • Media Digital
 <a href="bisnis.html">Bisnis</a>
 <a href="teknologi.html">Teknologi</a>
 <a href="lifestyle.html">Lifestyle</a>
-<a href="organisasi.html">Organisasi</a> 
+<a href="organisasi.html">Organisasi</a>
 
 </nav>
 
@@ -1018,7 +1278,7 @@ Ngulas Autentik • Media Digital
 
 <div class="breaking-text">
 
-🔥 BREAKING NEWS • Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial • MWC NU Kecamatan Cipondoh menyelenggarakan Lomba Pembacaan Rawi • Tren Bisnis Digital Meningkat • Destinasi Wisata Lokal Viral di Media Sosial • Generasi Z Jadi Penggerak Ekonomi Kreatif •
+🔥 BREAKING NEWS • Dari Layar ke Diskusi, KNPI Cipondoh Ajak Pemuda Ngulik Isu Sosial • MWC NU Kecamatan Cipondoh menyelenggarakan Lomba Pembacaan Rawi • Amerika Serikat dan Iran kembali damai • Destinasi Wisata Lokal Viral di Media Sosial • Generasi Z Jadi Penggerak Ekonomi Kreatif •
 
 </div>
 
@@ -1278,15 +1538,15 @@ LIFESTYLE
 <div class="news-meta">
 <i class="fas fa-user"></i> Tim Redaksi NGULTIK
 &nbsp;&nbsp;•&nbsp;&nbsp;
-<i class="fas fa-calendar"></i> 17 Juni 2026
+<i class="fas fa-calendar"></i> 19 Juni 2026
 </div>
 
 <h3>
-Generasi Z Dorong Tren Produktivitas dan Self Growth
+Negara Amerika Serikat dan Iran kembali damai, Apakah BBM akan turun?
 </h3>
 
 <p>
-Pengembangan diri menjadi salah satu fokus utama anak muda saat ini.
+Amerika Serikat dan Iran akhirnya sepakat buat stop ribut dulu, kira-kira bahan bakar bakal ikut turun ga yaaa
 </p>
 
 </div>
@@ -1613,5 +1873,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", function(){
+
+    navMenu.classList.toggle("show");
+
+    if(navMenu.classList.contains("show")){
+        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    }else{
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+
+});
+
+/* ===========================
+   SPLASH SCREEN
+=========================== */
+
+const splash = document.getElementById("splashScreen");
+
+document.getElementById("btnNews").onclick = function(){
+
+    splash.style.display="none";
+
+}
+
+document.getElementById("skipSplash").onclick = function(){
+
+    splash.style.display="none";
+
+}
 
 </script>
